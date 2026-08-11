@@ -52,18 +52,6 @@
   .v-strong { color: var(--strong); }
   .v-mod { color: var(--moderate); }
   .v-weak { color: var(--weak); }
-  sup a {
-    color: var(--accent); text-decoration: none; font-size: 11px;
-    padding: 0 1px; font-weight: 600;
-  }
-  sup a:hover { text-decoration: underline; }
-  .notes { margin-top: 56px; border-top: 2px solid var(--ink); padding-top: 24px; }
-  .notes h2 { margin-top: 0; }
-  ol { padding-left: 22px; margin: 0; }
-  ol li { font-size: 13.5px; color: var(--muted); margin-bottom: 9px; line-height: 1.5; }
-  ol li a { color: var(--accent); }
-  ol li:target { background: #fff6d9; border-radius: 3px; }
-  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
   @media (max-width: 640px) {
     body { padding: 28px 14px 64px; }
     h1 { font-size: 24px; }
@@ -78,39 +66,6 @@
   <p class="sub">As of 11 August 2026. Not anywhere near complete.</p>
 </header>
 
-<h2>Physical chokepoints</h2>
-<div class="tablewrap">
-<table>
-  <thead><tr><th>Actor / Instrument</th><th>Governs</th><th>What it does</th><th>Teeth?</th></tr></thead>
-  <tbody>
-    <tr>
-      <td class="a">US export controls</td>
-      <td>Chip designers, chip factories, cloud resellers. Indirectly: foreign AI labs</td>
-      <td>A government licence is required to sell the fastest AI chips, and the machines that make them, to certain countries<sup><a href="#fn1">1</a></sup></td>
-      <td><span class="v v-strong">Strong. It's law.</span> Fines, criminal charges, export bans, blacklisting. The rules also reach chips made outside the US if US technology was involved in making them<sup><a href="#fn1">1</a></sup></td>
-    </tr>
-    <tr>
-      <td class="a">TSMC / ASML and memory suppliers</td>
-      <td>Every frontier developer</td>
-      <td>A handful of companies are the only source of the most advanced chips, the machines that produce them, and the memory they need<sup><a href="#fn1">1</a></sup></td>
-      <td><span class="v v-strong">Strong, but private.</span> They can refuse to supply you, or give your production slot to someone else. No law, no appeal, no process</td>
-    </tr>
-    <tr>
-      <td class="a">Big cloud providers <span style="font-weight:400">(Microsoft, Google, Amazon, Oracle)</span></td>
-      <td>Labs that train models, and companies that deploy them</td>
-      <td>Check who is buying very large amounts of computing power, set usage rules, decide who gets capacity, and impose security requirements for protecting model weights<sup><a href="#fn3">3</a></sup></td>
-      <td><span class="v v-mod">Moderate. Depends on contracts.</span> They can cut a customer off. But often they are shareholders of the labs they would be policing</td>
-    </tr>
-    <tr>
-      <td class="a">Energy regulators and data-centre planning rules</td>
-      <td>The build-out of compute</td>
-      <td>Control grid connections, building permits, and who pays for new power<sup><a href="#fn4">4</a></sup></td>
-      <td><span class="v v-strong">Strong. It's law</span>, but not specifically written for AI. Without a permit and grid connection, there's no data centre.<sup><a href="#fn5">5</a></sup> This governs how fast AI gets built, not how models behave</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
 <h2>Company self-governance</h2>
 <div class="tablewrap">
 <table>
@@ -119,25 +74,25 @@
     <tr>
       <td class="a">Anthropic Responsible Scaling Policy</td>
       <td>Anthropic</td>
-      <td>Sets danger tiers ("ASL levels"). When a model reaches a tier, tougher security and deployment requirements kick in<sup><a href="#fn6">6</a></sup></td>
-      <td><span class="v v-weak">Weak, voluntary.</span> The company holds itself to it, watched by its board and trust.<sup><a href="#fn7">7</a></sup> It only becomes enforceable where a law (California's for example) requires publishing such a framework<sup><a href="#fn8">8</a></sup></td>
+      <td>Sets danger tiers ("ASL levels"). When a model reaches a tier, tougher security and deployment requirements kick in</td>
+      <td><span class="v v-weak">Weak, voluntary.</span> The company holds itself to it, watched by its board and trust. It only becomes enforceable where a law (California's for example) requires publishing such a framework</td>
     </tr>
     <tr>
       <td class="a">OpenAI Preparedness Framework</td>
       <td>OpenAI</td>
-      <td>Tracks specific dangerous capabilities and sets "High" and "Critical" thresholds that trigger safeguards before a model ships<sup><a href="#fn9">9</a></sup></td>
-      <td><span class="v v-weak">Weak, voluntary:</span> a safety committee sitting at the nonprofit Foundation level can demand fixes or block a release<sup><a href="#fn10">10</a></sup></td>
+      <td>Tracks specific dangerous capabilities and sets "High" and "Critical" thresholds that trigger safeguards before a model ships</td>
+      <td><span class="v v-weak">Weak, voluntary:</span> a safety committee sitting at the nonprofit Foundation level can demand fixes or block a release</td>
     </tr>
     <tr>
       <td class="a">Google DeepMind Frontier Safety Framework</td>
       <td>Google DeepMind</td>
-      <td>Defines "Critical Capability Levels" for bio and chemical weapons, cyberattacks, manipulation, and AI that speeds up AI research, each with a response plan<sup><a href="#fn11">11</a></sup></td>
+      <td>Defines "Critical Capability Levels" for bio and chemical weapons, cyberattacks, manipulation, and AI that speeds up AI research, each with a response plan</td>
       <td><span class="v v-weak">Weak, voluntary.</span> Reviewed by internal committees only</td>
     </tr>
     <tr>
       <td class="a">Meta, xAI and Microsoft frontier frameworks</td>
       <td>Each firm</td>
-      <td>Similar danger-threshold structures as above<sup><a href="#fn12">12</a></sup></td>
+      <td>Similar danger-threshold structures as above</td>
       <td><span class="v v-weak">None, voluntary.</span> Internal only</td>
     </tr>
   </tbody>
@@ -152,19 +107,19 @@
     <tr>
       <td class="a">EU GPAI Code of Practice</td>
       <td>Companies offering general-purpose AI models in the EU</td>
-      <td>Sign-up commitments: document your model, assess risks, report serious incidents, and have a copyright policy<sup><a href="#fn13">13</a></sup></td>
-      <td><span class="v v-mod">Moderate.</span> Voluntary to sign, but signing is the practical way to show you comply with the EU AI Act. No penalty for breaking the code but the regulators monitor signatories<sup><a href="#fn14">14</a></sup></td>
+      <td>Sign-up commitments: document your model, assess risks, report serious incidents, and have a copyright policy</td>
+      <td><span class="v v-mod">Moderate.</span> Voluntary to sign, but signing is the practical way to show you comply with the EU AI Act. No penalty for breaking the code but the regulators monitor signatories</td>
     </tr>
     <tr>
       <td class="a">Seoul Frontier AI Safety Commitments</td>
       <td>~20 frontier developers across the US, EU, UK, China and UAE</td>
-      <td>Each promises to publish a safety framework with danger thresholds and lines it will not cross<sup><a href="#fn15">15</a></sup></td>
+      <td>Each promises to publish a safety framework with danger thresholds and lines it will not cross</td>
       <td><span class="v v-weak">Weak, voluntary.</span></td>
     </tr>
     <tr>
       <td class="a">Frontier Model Forum</td>
       <td>Member labs (Anthropic, Google, Microsoft, OpenAI, Amazon, Meta)</td>
-      <td>Publishes shared technical guidance on danger thresholds, outside testing and security. Source of the field's common vocabulary<sup><a href="#fn16">16</a></sup></td>
+      <td>Publishes shared technical guidance on danger thresholds, outside testing and security. Source of the field's common vocabulary</td>
       <td><span class="v v-weak">None, voluntary.</span></td>
     </tr>
   </tbody>
@@ -180,25 +135,25 @@
       <td class="a">EN ISO/IEC 42001 <span style="font-weight:400">(AI management systems)</span></td>
       <td>Any organisation that wants the certificate</td>
       <td>Certifies that a company has AI management processes in place. Nothing about model safety, though</td>
-      <td><span class="v v-weak">Weak, voluntary.</span> The certificate can be withdrawn, and it does not yet earn automatic credit towards EU AI Act compliance<sup><a href="#fn17">17</a></sup></td>
+      <td><span class="v v-weak">Weak, voluntary.</span> The certificate can be withdrawn, and it does not yet earn automatic credit towards EU AI Act compliance</td>
     </tr>
     <tr>
       <td class="a">CAISI <span style="font-weight:400">(US Center for AI Standards and Innovation)</span></td>
       <td>Volunteering developers</td>
-      <td>Tests models before release (30-day pre-release review), with a focus on cybersecurity, and works on standards<sup><a href="#fn18">18</a></sup></td>
-      <td><span class="v v-weak">None, voluntary.</span> It can test a model but cannot approve or block one. Its findings are not published anymore<sup><a href="#fn19">19</a></sup></td>
+      <td>Tests models before release (30-day pre-release review), with a focus on cybersecurity, and works on standards</td>
+      <td><span class="v v-weak">None, voluntary.</span> It can test a model but cannot approve or block one. Its findings are not published anymore</td>
     </tr>
     <tr>
       <td class="a">UK AI Security Institute</td>
       <td>Volunteering developers</td>
-      <td>Tests models before release and does the underlying research<sup><a href="#fn20">20</a></sup></td>
+      <td>Tests models before release and does the underlying research</td>
       <td><span class="v v-weak">None, voluntary.</span> No power to approve or block the release</td>
     </tr>
     <tr>
       <td class="a">Independent evaluators <span style="font-weight:400">— METR, Apollo Research, FAR.AI</span></td>
       <td>Whoever hires them</td>
-      <td>Various evals on whether models can act on their own across long tasks, whether they deceive their operators, and whether they can meaningfully uplift a bad actor<sup><a href="#fn21">21</a></sup></td>
-      <td><span class="v v-weak">Weak, contractual.</span> They publish their findings<sup><a href="#fn22">22</a></sup> but are limited by confidentiality agreements and require the lab's permission to get access in the first place<sup><a href="#fn23">23</a></sup></td>
+      <td>Various evals on whether models can act on their own across long tasks, whether they deceive their operators, and whether they can meaningfully uplift a bad actor</td>
+      <td><span class="v v-weak">Weak, contractual.</span> They publish their findings but are limited by confidentiality agreements and require the lab's permission to get access in the first place</td>
     </tr>
   </tbody>
 </table>
@@ -212,71 +167,29 @@
     <tr>
       <td class="a">European AI Office</td>
       <td>Providers of general-purpose AI models</td>
-      <td>The single EU regulator for these models: can demand documents, run its own tests, order fixes, restrict a model, and fine<sup><a href="#fn24">24</a></sup></td>
-      <td><span class="v v-strong">Strong. It's the law.</span> Fines up to 3% of worldwide revenue or €15M, and the power to pull a model from the EU market.<sup><a href="#fn24">24</a></sup> Limited in practice by how few technical staff it has<sup><a href="#fn25">25</a></sup></td>
-    </tr>
-    <tr>
-      <td class="a">National market-surveillance authorities (EU)</td>
-      <td>AI products on sale (not the underlying models) in the EU</td>
-      <td>Each EU country's own regulator polices AI systems in its market</td>
-      <td><span class="v v-mod">Possibly strong, depends on the country.</span> Fines and forced withdrawal, but only where a country has actually appointed and funded a regulator<sup><a href="#fn24">24</a></sup></td>
+      <td>The single EU regulator for these models: can demand documents, run its own tests, order fixes, restrict a model, and fine</td>
+      <td><span class="v v-strong">Strong. It's the law.</span> Fines up to 3% of worldwide revenue or €15M, and the power to pull a model from the EU market. Limited in practice by how few technical staff it has</td>
     </tr>
     <tr>
       <td class="a">Department for Science, Innovation and Technology / UK AI Security Institute</td>
       <td>The UK</td>
       <td>Model testing (see above), risk assessment</td>
-      <td><span class="v v-weak">None directly.</span> Sector regulators have real powers<sup><a href="#fn26">26</a></sup></td>
+      <td><span class="v v-weak">None directly.</span> Sector regulators have real powers</td>
     </tr>
     <tr>
       <td class="a">US federal: CAISI, executive offices, AI Litigation Task Force</td>
       <td>US</td>
-      <td>Sets rules for government procurement, tests models voluntarily (see above), and sues states over their AI laws<sup><a href="#fn27">27</a></sup></td>
-      <td><span class="v v-mod">Strong against states, none against developers.</span> The Justice Department can take states to court and federal purchasing rules bind suppliers, but no federal body can tell a lab how to build a model<sup><a href="#fn28">28</a></sup></td>
+      <td>Sets rules for government procurement, tests models voluntarily (see above), and sues states over their AI laws</td>
+      <td><span class="v v-mod">Strong against states, none against developers.</span> The Justice Department can take states to court and federal purchasing rules bind suppliers, but no federal body can tell a lab how to build a model</td>
     </tr>
     <tr>
       <td class="a">Cyberspace Administration of China</td>
       <td>Companies offering AI in China</td>
-      <td>Requires registration and a security review before launch, review of training data, and labelling of AI-generated content<sup><a href="#fn29">29</a></sup></td>
-      <td><span class="v v-strong">Strong. It's the law.</span> Can suspend a service or bar it from the market entirely<sup><a href="#fn30">30</a></sup></td>
+      <td>Requires registration and a security review before launch, review of training data, and labelling of AI-generated content</td>
+      <td><span class="v v-strong">Strong. It's the law.</span> Can suspend a service or bar it from the market entirely</td>
     </tr>
   </tbody>
 </table>
-</div>
-
-<div class="notes">
-<h2>Sources</h2>
-<ol>
-  <li id="fn1">Congressional Research Service, <a href="https://www.congress.gov/crs-product/R48642"><em>U.S. Export Controls and China: Advanced Semiconductors</em></a> — licensing structure, supply-chain concentration and the foreign direct product rule.</li>
-  <li id="fn2">Council on Foreign Relations, <a href="https://www.cfr.org/articles/new-ai-chip-export-policy-china-strategically-incoherent-and-unenforceable"><em>The New AI Chip Export Policy to China</em></a> — the January 2026 rule permitting H200-class exports.</li>
-  <li id="fn3">Lawfare, <a href="https://www.lawfaremedia.org/article/know-your-customer-is-coming-for-the-cloud-the-stakes-are-high"><em>Know-Your-Customer Is Coming for the Cloud</em></a> — reporting duties on large foreign training runs, including model-weight security.</li>
-  <li id="fn4">American Action Forum, <a href="https://www.americanactionforum.org/insight/ferc-data-center-orders-accelerate-grid-connection/"><em>FERC Data Center Orders Accelerate Grid Connection</em></a> — the June 2026 large-load orders on queues, cost allocation and ratepayer protection.</li>
-  <li id="fn5">White &amp; Case, <a href="https://www.whitecase.com/insight-alert/doe-directs-ferc-accelerate-interconnection-data-centers"><em>DOE Directs FERC to Accelerate Interconnection of Data Centers</em></a> — the authority behind large-load interconnection review.</li>
-  <li id="fn6">Anthropic, <a href="https://www.anthropic.com/responsible-scaling-policy"><em>Responsible Scaling Policy</em></a> — ASL tiers and the deployment and security standards attached to them.</li>
-  <li id="fn7">GovAI, <a href="https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections"><em>Anthropic's RSP v3.0: How It Works, What's Changed</em></a> — independent read on the oversight mechanism and its limits.</li>
-  <li id="fn8">White &amp; Case, <a href="https://www.whitecase.com/insight-alert/california-enacts-landmark-ai-transparency-law-transparency-frontier-artificial"><em>California Enacts Landmark AI Transparency Law (SB 53)</em></a> — the statutory duty to publish a frontier AI framework.</li>
-  <li id="fn9">OpenAI, <a href="https://openai.com/index/updating-our-preparedness-framework/"><em>Our Updated Preparedness Framework</em></a> — tracked categories and High/Critical thresholds.</li>
-  <li id="fn10">Transformer, <a href="https://www.transformernews.ai/p/what-you-need-to-know-about-the-openai-restructure-sam-altman-pbc-foundation"><em>What You Need to Know About the OpenAI Restructure</em></a> — the Safety &amp; Security Committee's placement and authority.</li>
-  <li id="fn11">Google DeepMind, <a href="https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"><em>Strengthening Our Frontier Safety Framework</em></a> — Critical Capability Levels across CBRN, cyber, manipulation and ML R&amp;D.</li>
-  <li id="fn12">AI Lab Watch, <a href="https://ailabwatch.org/resources/commitments"><em>Commitments by several companies</em></a> — side-by-side of the published frameworks, including the thinner ones.</li>
-  <li id="fn13">EU Artificial Intelligence Act, <a href="https://artificialintelligenceact.eu/introduction-to-code-of-practice/"><em>Introduction to the Code of Practice for General-Purpose AI</em></a> — the three chapters and what signing commits you to.</li>
-  <li id="fn14">European Commission, <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"><em>Guidelines for Providers of General-Purpose AI Models</em></a> — how the AI Office treats signatories versus non-signatories.</li>
-  <li id="fn15">UK Government, <a href="https://gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024"><em>Frontier AI Safety Commitments, AI Seoul Summit 2024</em></a> — text and signatory list.</li>
-  <li id="fn16">Frontier Model Forum, <a href="https://www.frontiermodelforum.org/technical-reports/third-party-assessments/"><em>Third-Party Assessments</em></a> — example of the shared technical guidance.</li>
-  <li id="fn17">ISMS.online, <a href="https://www.isms.online/frameworks/iso-42001/iso-42001-harmonised-standards-eu-ai-act-presumption-of-conformity/"><em>ISO 42001, Harmonised Standards and the EU AI Act</em></a> — why certification is not yet a presumption of conformity.</li>
-  <li id="fn18">Skadden, <a href="https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order"><em>New AI Executive Order Calls for Frontier Model Security and Early Government Access</em></a> — the voluntary 30-day pre-release review.</li>
-  <li id="fn19">Office of Senator Ted Budd, <a href="https://www.budd.senate.gov/2026/06/30/budd-calls-for-caisi-to-resume-publishing-research-on-frontier-ai-models/"><em>Budd Calls for CAISI to Resume Publishing Research</em></a> — confirmation that publication has stopped, and that it is contested.</li>
-  <li id="fn20">UK AI Security Institute, <a href="https://www.aisi.gov.uk/blog"><em>Blog and research index</em></a> — testing programme and research remit.</li>
-  <li id="fn21">METR, <a href="https://metr.org/blog/2026-05-19-frontier-risk-report/"><em>Frontier Risk Report</em></a> — worked example of autonomy and uplift evaluation.</li>
-  <li id="fn22">OpenAI, <a href="https://openai.com/index/trustworthy-third-party-evaluations-foundations/"><em>A Shared Playbook for Trustworthy Third-Party Evaluations</em></a> — access and publication terms from the developer's side.</li>
-  <li id="fn23">RUSI, <a href="https://static.rusi.org/secure-third-party-access-to-frontier-ai-2026-final.pdf"><em>Developing a Framework for Secure Third-Party Access to Frontier AI</em></a> — why access remains the binding constraint on external evaluation.</li>
-  <li id="fn24">EU Artificial Intelligence Act, <a href="https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"><em>Enforcement of Chapter V</em></a> — AI Office powers, the 3% / €15M ceiling, and the split with national authorities.</li>
-  <li id="fn25">Lawfare, <a href="https://www.lawfaremedia.org/article/how-much-power-does-the-eu-ai-office-actually-have"><em>How Much Power Does the EU AI Office Actually Have?</em></a> — the gap between formal powers and staffing.</li>
-  <li id="fn26">Bratby Law, <a href="https://bratby.law/uk-ai-regulation-framework/"><em>UK AI Regulation: The Practitioner Framework</em></a> — no UK AI Act; powers sit with the ICO, Ofcom, FCA and MHRA.</li>
-  <li id="fn27">The White House, <a href="https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/"><em>Ensuring a National Policy Framework for Artificial Intelligence</em> (EO 14365)</a> — the litigation directive and funding conditions.</li>
-  <li id="fn28">Sidley, <a href="https://datamatters.sidley.com/2025/12/23/unpacking-the-december-11-2025-executive-order-ensuring-a-national-policy-framework-for-artificial-intelligence/"><em>Unpacking the December 11, 2025 Executive Order</em></a> — the AI Litigation Task Force, and the absence of federal power over model development.</li>
-  <li id="fn29">China Law Translate, <a href="https://www.chinalawtranslate.com/en/ai-labeling/"><em>Measures for Labeling of AI-Generated Synthetic Content</em></a> — the labelling duty in translation.</li>
-  <li id="fn30">Deep Lex, <a href="https://www.deep-lex.com/ai-regulation-tracker/china"><em>China AI Regulation Tracker</em></a> — filing, security assessment and suspension powers across the CAC instruments.</li>
-</ol>
 </div>
 
 </div>
